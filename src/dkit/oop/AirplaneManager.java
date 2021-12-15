@@ -3,6 +3,7 @@ package dkit.oop;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * AirplaneManager is a container class that stores Airplanes
@@ -24,6 +25,10 @@ public class AirplaneManager {
     //Q3.
 
     // write add() method
+    public void add(){
+        Scanner kb = new Scanner(System.in);
+
+    }
 
 
     public void displayAllAirplanes() {
