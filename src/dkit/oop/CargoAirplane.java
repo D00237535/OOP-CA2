@@ -25,11 +25,11 @@ public class CargoAirplane extends Airplane {
     // toString()
     @Override
     public String toString() {
-        return "CargoAirplane{" +
-                super.toString() +
-                "Max_Load_Kilos=" + Max_Load_Kilos +
-                ", currentLoad=" + currentLoad +
-                '}';
+        return getClass().getSimpleName() +
+                "id='" + super.getId() + '\'' +
+                ", type='" + super.getType() + '\'' +
+                ", max_load_kilos=" + Max_Load_Kilos + '\'' +
+                ", currentLoad=" + currentLoad +  '\'';
     }
 
 

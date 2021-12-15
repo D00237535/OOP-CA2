@@ -45,4 +45,12 @@ public class CityDistanceManager {
             System.out.println("");
         }
     }
+
+    public void findDistanceBetween(String city1, String city2){
+        int distance = 0;
+
+        distanceBetween =;
+        return distanceBetween;
+    }
+
 }

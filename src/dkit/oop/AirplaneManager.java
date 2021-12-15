@@ -1,9 +1,6 @@
 package dkit.oop;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * AirplaneManager is a container class that stores Airplanes
@@ -24,33 +21,84 @@ public class AirplaneManager {
 
     //Q3.
 
-    // write add() method
-    public void add(){
-        Scanner kb = new Scanner(System.in);
 
+
+    // write add() method
+    public ArrayList<Airplane> add(Airplane airplane){
+        this.airplaneList.add(airplane);
+        return this.airplaneList;
     }
 
 
     public void displayAllAirplanes() {
-        // add code
+        System.out.println("Displaying all airplanes: ");
+        for(Airplane airplane : airplaneList){
+            System.out.println(airplane);
+        }
     }
 
     public void displayAllPassengerAirplanes() {
         // add code
+        System.out.println("Displaying only the passenger airplanes:");
+
+        for(Airplane airplane: airplaneList){
+            if(airplane instanceof PassengerAirplane){
+                System.out.println(airplane);
+            }
+        }
     }
 
     //  write method getAllCargoAirplanes()
+    public Airplane getAllCargoAirplanes(){
+        System.out.println("Display all cargo planes: ");
+        ArrayList<Airplane> airplane = new ArrayList<>();
+        for(Airplane a: airplane){
+            if(a instanceof CargoAirplane){
+                return a;
+            }
+        }
+        return null;
+    }
 
 
     // write  addPassengerNameToAirplane( airplaneId, passengerName)
+    public boolean addPassengerNameToAirplane(int airplaneID, String passengerName)
+    {
+        for(Airplane airplane : airplaneList) {
+            if(airplane.getId() == airplaneID && airplane instanceof PassengerAirplane) {
+                ((PassengerAirplane) airplane).addPassenger(passengerName);
+                return true;
+            }
+        }
 
-
+        return false;
+    }
     // write containsAirplane( Airplane plane )
+    public boolean containsAirplane(Airplane plane) {
+        for(Airplane airplane : airplaneList) {
+            if(airplane.getId() == plane.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     // write findAirplaneByPassengerName( passengerName )
+    public Airplane findAirplaneByPassengerName(String passengerName){
+        for(Airplane airplane : airplaneList) {
+            if(airplane instanceof PassengerAirplane) {
+                if(((PassengerAirplane) airplane).getPassengerList().contains(passengerName)) {
+                    return airplane;
+                }
+            }
+        }
+
+        return null;
+    }
 
     // write displayAllAirplanesInOrderOfType( argument )
+
 
 
 } // end of AirplaneManager

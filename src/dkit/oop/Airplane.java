@@ -1,5 +1,7 @@
 package dkit.oop;
 
+import java.util.Collection;
+
 public abstract class Airplane {
 
     private int id;
