@@ -25,4 +25,4 @@ public abstract class Airplane {
                 ", type='" + type + '\'' ;
     }
 
-} // end of Airplane
+} //end of Airplane
