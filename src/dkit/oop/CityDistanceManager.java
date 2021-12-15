@@ -13,7 +13,10 @@ public class CityDistanceManager {
                     {219, 306, 209, 105, 0}
             };
 
-    CityDistanceManager(){};    // constructor;
+    CityDistanceManager() {
+    }
+
+    ;    // constructor;
 
     // Q4.1
     public int findDistanceBetween(String city1, String city2) {
@@ -29,7 +32,7 @@ public class CityDistanceManager {
 
     /////////////// no changes required below this comment ///////////////
 
-    public  void printCitiesData() {
+    public void printCitiesData() {
         System.out.printf("%-10s", "");
         for (int i = 0; i < cities.length; i++) {
             System.out.printf("%10s", cities[i]);
@@ -45,12 +48,6 @@ public class CityDistanceManager {
             System.out.println("");
         }
     }
-
-    public void findDistanceBetween(String city1, String city2){
-        int distance = 0;
-
-        distanceBetween =;
-        return distanceBetween;
-    }
-
 }
+
+

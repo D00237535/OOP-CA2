@@ -42,6 +42,43 @@ public class App
         //Q3
 
         // write calls to methods implemented for Q3.
+        mgr.add(cargoPlane1);
+        mgr.add(cargoPlane2);
+        mgr.add(passengerPlane1);
+        mgr.add(passengerPlane2);
+
+        //Display all airplanes:
+        mgr.displayAllAirplanes();
+
+        //Display only the passenger airplanes:
+        mgr.displayAllPassengerAirplanes();
+
+        // Getting all cargo airplanes:
+        List<Airplane> allCargoAirplanes = (List<Airplane>) mgr.getAllCargoAirplanes();
+        System.out.println("Printing all cargo airplanes: ");
+        for(Airplane airplane : allCargoAirplanes)
+        {
+            System.out.println(airplane);
+        }
+
+        //addPassengerNameToAirplane:
+        System.out.println("Testing addPassengerNameToAirplane(): ");
+            boolean addedPassenger = mgr.addPassengerNameToAirplane(103, "Tom Holland");
+                System.out.println(addedPassenger);
+            System.out.println("Printing all passenger airplanes to verify if new passenger has been added: ");
+        mgr.displayAllPassengerAirplanes();
+
+        //containsAirplane:
+        boolean containsPassengerPlane1 = mgr.containsAirplane(passengerPlane1);
+            boolean containsNewPlane = mgr.containsAirplane(new CargoAirplane("Boeing C-7000",2200));
+            System.out.println("Contains passengerPlane1 : " + containsPassengerPlane1);
+        System.out.println("Contains new plane with same values (except id) as cargoPlane2 : " + containsNewPlane);
+
+        // Testing findAirplaneByPassengerName:
+        Airplane findPlaneWithMargotRobbie = mgr.findAirplaneByPassengerName("Margot Robbie");
+             System.out.println("Plane that has Margot Robbie as a passenger: " + findPlaneWithMargotRobbie);
+            Airplane findPlaneWithChirsEvans = mgr.findAirplaneByPassengerName("Chris Evans");
+        System.out.println("Plane that has Chris Evans as a passenger: " + findPlaneWithChirsEvans);
 
 
 
@@ -49,24 +86,24 @@ public class App
         //Question 4
         // Uncomment all the code below and implement the two methods
         // in the CityDistanceManager class.
-
-        CityDistanceManager cityDistanceManager = new CityDistanceManager();
-        cityDistanceManager.printCitiesData();
-
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("\nPlease enter first city name:");
-        String city1 = keyboard.nextLine();
-        System.out.print("Please enter second city name:");
-        String city2 = keyboard.nextLine();
-
-        int distance = cityDistanceManager.findDistanceBetween(city1, city2);
-        System.out.println("Distance between " + city1 + " and " + city2 + " = " + distance);
-
-        System.out.print("\nEnter base city name:");
-        String baseCity = keyboard.nextLine();
-
-        String closestCity = cityDistanceManager.findClosestCityTo(baseCity);
-        System.out.println("Closest city to " + baseCity+" = " + closestCity);
+//
+//        CityDistanceManager cityDistanceManager = new CityDistanceManager();
+//        cityDistanceManager.printCitiesData();
+//
+//        Scanner keyboard = new Scanner(System.in);
+//        System.out.print("\nPlease enter first city name:");
+//        String city1 = keyboard.nextLine();
+//        System.out.print("Please enter second city name:");
+//        String city2 = keyboard.nextLine();
+//
+//        int distance = cityDistanceManager.findDistanceBetween(city1, city2);
+//        System.out.println("Distance between " + city1 + " and " + city2 + " = " + distance);
+//
+//        System.out.print("\nEnter base city name:");
+//        String baseCity = keyboard.nextLine();
+//
+//        String closestCity = cityDistanceManager.findClosestCityTo(baseCity);
+//        System.out.println("Closest city to " + baseCity+" = " + closestCity);
 
     }
 }
